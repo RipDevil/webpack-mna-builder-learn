@@ -1,0 +1,10 @@
+html, body {
+  background-color: indigo;
+  color: aliceblue;
+}
+
+h1 {
+  margin: auto auto;
+  padding: 1rem;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
