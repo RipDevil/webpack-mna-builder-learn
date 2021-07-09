@@ -10,12 +10,18 @@ const mode =
 
 module.exports = {
   mode,
-  devtool: 'source-map',
+  plugins,
 
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'gibberish.js',
+    filename: '[name].[contenthash].hash.js',
     assetModuleFilename: 'images/[hash][ext][query]',
+  },
+
+  devtool: 'source-map',
+
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 
   module: {
@@ -38,12 +44,7 @@ module.exports = {
     ],
   },
 
-  plugins,
-
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-
+  // Development
   devServer: {
     contentBase: './dist',
     hot: true,
